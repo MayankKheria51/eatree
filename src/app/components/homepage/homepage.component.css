@@ -1,0 +1,28 @@
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+  body{
+    background-image: url('C:\Users\U6080512\Desktop\angular\eatree\src\assets\19550.jpg');
+    background-repeat: no-repeat; 
+     background-attachment: fixed;
+    background-attachment: local;
+    background-position-y: 25%;
+    background-size:cover;
+    background-position-y: 2rem;
+    background-position-y: center;
+    background-position: center;
+   
+
+  }
+ 
