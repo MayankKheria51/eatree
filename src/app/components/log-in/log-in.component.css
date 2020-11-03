@@ -1,0 +1,22 @@
+::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: #e75480 !important;
+  } 
+  ::ng-deep.mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: #e75480 !important;;
+   }
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #e75480;
+    opacity: 1; /* Firefox */
+  }
+  
+.custom-file-upload {
+    border: 1px solid #e75480;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    color:#e75480;
+    background-color: white;
+    border-radius: 5px;
+}

@@ -1,36 +1,70 @@
-<style>
-  body{
-  background-image: url('C:\Users\U6080512\Desktop\angular\eatree\src\assets\19550.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center"  *ngIf="LoginSuccessful;else elseBlock">
 
-}
-</style> 
+  <mat-card class="box" style="background-color:#ffca75;">
+    <mat-card-header>
+      <mat-card-title>Log in</mat-card-title>
+    </mat-card-header>
 
-<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
- 
+    <form class="example-form">
+      <mat-card-content>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Username" color="accent">
+        </mat-form-field>
 
-    <mat-card class="box">
-      <mat-card-header>
-        <mat-card-title>Log in</mat-card-title>
+            <input style="color:#e75480 ;" type="file" (change)="onChange($event)" id="exampleFormControlFile1">
+
+        
+
+       
+      </mat-card-content>
+      <button style="    border: 1px solid #ff4081;
+      line-height: 54px;
+      background: #FFF7FA;
+      color: #ff4081;"  class="btn-block" (click)="singleClick()" (dblclick)="doubleClick()">Log in</button>
+    </form>
+  </mat-card>
+
+</div>
+<ng-template #elseBlock>
+ <div fxLayout="row" fxLayoutAlign="center center" *ngIf="!LoginFailed; else FailedBlock">
+  <mat-card class="box" style="background-color:#228B22;">
+    <mat-card-header fxLayout="row" fxLayoutAlign="center center">
+      <mat-card-title style="color:white">Login Successful!!!</mat-card-title>
+    </mat-card-header>
+    <div > <p style="    color: white;
+      font-size: xxx-large;">
+      Welcome Onboard
+    </p>
+  <p style="color: white;
+  font-size: large;">
+    What do you wanna gobble up today ?
+  </p></div>
+
+    
+  </mat-card>
+ </div>
+<ng-template #FailedBlock>
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box" style="background-color:#D40707;">
+      <mat-card-header fxLayout="row" fxLayoutAlign="center center">
+        <mat-card-title style="color:white">Login Unsuccessful!!!</mat-card-title>
       </mat-card-header>
-  
-      <form class="example-form">
-        <mat-card-content>
-          <mat-form-field class="example-full-width">
-            <input type="text" placeholder="Username">
-          </mat-form-field>
-
-        </mat-card-content>
-        <form>
-          <div class="form-group">
-            <label for="exampleFormControlFile1">Input Your Image</label>
-            <input type="file" class="form-control-file" id="exampleFormControlFile1">
-          </div>
-        </form>
-        <button mat-stroked-button color="accent" class="btn-block">Log in</button>
-      </form>
-    </mat-card>
+      <div > 
+    <p style="color: white;
+    font-size: large;">
+      Please try again!
+    </p> 
+    <button style="    border: 1px solid #ff4081;
+    line-height: 54px;
+    background: #FFF7FA;
+    width: 70%;
+    color: #ff4081;"   (click)="LoginAgain()">Log in</button>
+    
   
   </div>
+  
+      
+    </mat-card>
+   </div>
+</ng-template>
+</ng-template>

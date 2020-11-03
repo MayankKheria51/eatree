@@ -20,6 +20,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { LogInComponent } from './components/log-in/log-in.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
+import { DisplayComponent } from './components/display/display.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
     RegisterComponent,
     RegisterComponent,
     LogInComponent,
+    DisplayComponent,
     HomepageComponent
   ],
   imports: [

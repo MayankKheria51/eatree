@@ -14,22 +14,22 @@
         <mat-form-field class="example-full-width">
           <input matInput placeholder="Email">
         </mat-form-field>
-
-        <mat-form-field class="example-full-width">
+        <mat-form-field class="example-full-width"  >
           <input matInput placeholder="Password">
         </mat-form-field>
-
-        <!-- <mat-form-field class="example-full-width">
-          <mat-label>Choose a role...</mat-label>
-          <mat-select>
-            <mat-option [value]="roles" *ngFor="let roles of Roles">{{roles}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field> -->
+        <input style="color:#e75480 ;" type="file" (change)="onChange($event)" id="exampleFormControlFile1">
+        <!-- <mat-spinner [hidden]="'isSpinnerhidden'" diameter="40"></mat-spinner> -->
+        <mat-spinner diameter="40" *ngIf="isSpinnerhidden === false"></mat-spinner>
+        
+        
+        <P  style = "margin-top: 10px;color: #228B22;" *ngIf="isPasswordhidden === false"> The OCR retrieved password : <b>{{password}}</b> <br> and the password you entered are same.
+         </P>
+        <p style = "margin-top: 5px;color: #228B22;" *ngIf="isPasswordhidden === false"> Good to Go!!!</p>
+        
 
       </mat-card-content>
 
-      <button mat-stroked-button color="accent" class="btn-block">Register</button>
+      <button mat-stroked-button color="accent" class="btn-block" [disabled] = "isPasswordhidden">Register</button>
 
     </form>
   </mat-card>

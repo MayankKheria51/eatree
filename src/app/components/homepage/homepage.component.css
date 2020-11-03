@@ -13,7 +13,8 @@
     }
   }
   body{
-    background-image: url('C:\Users\U6080512\Desktop\angular\eatree\src\assets\19550.jpg');
+    background-image: url('https://s1.1zoom.me/big0/158/410266-svetik.jpg');
+    /* //background-color: black; */
     background-repeat: no-repeat; 
      background-attachment: fixed;
     background-attachment: local;
@@ -23,6 +24,11 @@
     background-position-y: center;
     background-position: center;
    
+   
 
   }
+   a {
+     color:white;
+     font-size: larger;
+   }
  
