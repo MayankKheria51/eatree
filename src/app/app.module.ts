@@ -21,6 +21,7 @@ import { LogInComponent } from './components/log-in/log-in.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { DisplayComponent } from './components/display/display.component';
+import { btsComponent } from './components/bts/bts.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { DisplayComponent } from './components/display/display.component';
     RegisterComponent,
     LogInComponent,
     DisplayComponent,
+    btsComponent,
     HomepageComponent
   ],
   imports: [

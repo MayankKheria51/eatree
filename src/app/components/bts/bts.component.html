@@ -1,0 +1,36 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center" >
+    <mat-card class="">
+      <mat-card-header>
+        <mat-card-title>Choose Share 1 and Share 2</mat-card-title>
+      </mat-card-header>
+  
+      <form class="example-form">
+  
+        <mat-card-content>
+            <div style="width: 100%;padding:5px;">
+          <span style="color:#e75480 ;margin-top:10px;float:left;margin-left: 10px; font-weight: 400;margin-bottom: 5px;">Add Share1</span>
+          <input style="color:#e75480 ;" type="file"  id="exampleFormControlFile1" (change) = "share1()">
+          <div *ngIf="share1img"><img src="C:\Users\u6075784\Desktop\eatree\src\assets\Share 1.png"></div>
+        </div>
+        <div style="width: 100%;margin-top: 5px;">
+          <span style="color:#e75480 ;margin-top:10px;float:left;margin-left: 10px;font-weight: 400;margin-bottom: 5px;">Add Share2</span>
+          <input style="color:#e75480 ;" type="file"  id="exampleFormControlFile1" (change) = "share2()">
+          <div *ngIf="share2img"><img src="C:\Users\u6075784\Desktop\eatree\src\assets\Share 2.png"></div>
+        </div>
+  
+        </mat-card-content>
+  
+        <button mat-stroked-button color="accent" class="btn-block" (click)="merge()" *ngIf="ismergedisabled">Merge</button>
+       
+      </form>
+      <div style="width: 100%;" *ngIf="!ismergedisabled">
+        <img style="float: left;" src="C:\Users\u6075784\Desktop\eatree\src\assets\Share 1.png"> <span > + </span>
+        <img style="float: right;" src="C:\Users\u6075784\Desktop\eatree\src\assets\Share 2.png"></div><span *ngIf="!ismergedisabled">  = </span><br>
+      
+        <img *ngIf="!ismergedisabled" src="C:\Users\u6075784\Desktop\eatree\src\assets\res.png">
+
+        <button style="margin-top: 20px;" mat-stroked-button color="accent" class="btn-block" (click) = "ocrValidationS()" (dblclick)="ocrValidationU()" *ngIf="!ismergedisabled">OCR Validation</button>
+       <p style="color: #228B22;" *ngIf="ocrValidationSuccessfull"> Validation SuccessFull !!! <br> The OCR extracted Password is {{Password}}</p>
+       <p style="color: #D40707;" *ngIf="ocrValidationFailed"> Validation UnsuccessFull !!! <br> The OCR extracted Password is {{Password}}</p>
+    </mat-card>
+  </div>
