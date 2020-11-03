@@ -1,5 +1,5 @@
 <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center" *ngIf="!RegisterSuccessful; else elseBlock">
-  <mat-card class="box">
+  <mat-card class="">
     <mat-card-header>
       <mat-card-title>Register</mat-card-title>
     </mat-card-header>
@@ -14,40 +14,46 @@
         <mat-form-field class="example-full-width">
           <input matInput placeholder="Email">
         </mat-form-field>
-        <mat-form-field class="example-full-width"  >
+        <mat-form-field class="example-full-width">
           <input matInput placeholder="Password">
         </mat-form-field>
         <input style="color:#e75480 ;" type="file" (change)="onChange($event)" id="exampleFormControlFile1">
         <!-- <mat-spinner [hidden]="'isSpinnerhidden'" diameter="40"></mat-spinner> -->
         <mat-spinner diameter="40" *ngIf="isSpinnerhidden === false"></mat-spinner>
-        
-        
-        <P  style = "margin-top: 10px;color: #228B22;" *ngIf="isPasswordhidden === false && match === true"> The OCR retrieved password : <b>{{password}}</b> <br> and the password you entered are same.
-         </P>
-        <p style = "margin-top: 5px;color: #228B22;" *ngIf="isPasswordhidden === false && match === true"> Good to Go!!!</p>
-        <P  style = "margin-top: 10px;color: red" *ngIf="isPasswordhidden === false && match === false"> The OCR retrieved password : <b>{{password}}</b> <br> and the password you entered are not same.
+
+
+        <P style="margin-top: 10px;color: #228B22;" *ngIf="isPasswordhidden === false && match === true"> Your password
+          is validated.
         </P>
-       <p style = "margin-top: 5px;color: red" *ngIf="isPasswordhidden === false && match === false"> Please try again.</p>
-        
+        <P style="margin-top: 10px;color: red" *ngIf="isPasswordhidden === false && match === false"> Ypur password
+          cannot be validated. Please try again
+        </P>
+
+
 
       </mat-card-content>
 
-      <button mat-stroked-button color="accent" class="btn-block" [disabled] = "isRegisterhidden" (click) = "Register()" >Register</button>
+      <button mat-stroked-button color="accent" class="btn-block" [disabled]="isRegisterhidden"
+        (click)="Register()">Register</button>
 
     </form>
   </mat-card>
 </div>
 <ng-template #elseBlock>
-  <div fxLayout="row" fxLayoutAlign="center center" >
-    <mat-card class="box" style="background-color:#228B22;">
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="" style="background-color:#228B22;">
       <mat-card-header fxLayout="row" fxLayoutAlign="center center">
         <mat-card-title style="color:white">Registration Successful!!!</mat-card-title>
       </mat-card-header>
-      <i class="fa fa-download" aria-hidden="true">
-      <a style="color:white; font-weight: 400;" href=" data:image/png;base64,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" class="btn clss"
-                  target="_self" download>Download Your Password Image</a></i>
-     <div><p style = "margin-top: 5px;color: white;">Please use the downloaded password to Log in.</p></div>
-      
+      <i class="fa fa-download" aria-hidden="true" style="color: white">
+        <a style="color: white" target="_self" href="../../../assets/Share2_Password.png"
+          download="Share2_Password.png">
+          Download Your Password Image</a>
+      </i>
+      <div>
+        <p style="margin-top: 5px;color: white;">Please use the downloaded password to Log in.</p>
+      </div>
+
     </mat-card>
-   </div>
+  </div>
 </ng-template>

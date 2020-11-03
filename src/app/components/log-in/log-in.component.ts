@@ -28,7 +28,7 @@ files: any;
           this.isSingleClick = false;
           this.LoginSuccessful = true;
           this.LoginFailed = true;
-          console.log("Failed!!!")
+          console.log("Failed!!!");
  }
 onChange(event) {
   this.files = event.srcElement.files;

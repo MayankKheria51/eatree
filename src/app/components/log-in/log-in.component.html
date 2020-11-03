@@ -1,6 +1,6 @@
-<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center"  *ngIf="LoginSuccessful;else elseBlock">
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center" *ngIf="LoginSuccessful;else elseBlock">
 
-  <mat-card class="box" style="background-color:#ffca75;">
+  <mat-card class="" style="background-color:#ffca75;">
     <mat-card-header>
       <mat-card-title>Log in</mat-card-title>
     </mat-card-header>
@@ -10,61 +10,61 @@
         <mat-form-field class="example-full-width">
           <input matInput placeholder="Username" color="accent">
         </mat-form-field>
+        <input style="color:#e75480 ;" type="file" (change)="onChange($event)" id="exampleFormControlFile1">
 
-            <input style="color:#e75480 ;" type="file" (change)="onChange($event)" id="exampleFormControlFile1">
 
-        
 
-       
+
       </mat-card-content>
       <button style="    border: 1px solid #ff4081;
       line-height: 54px;
       background: #FFF7FA;
-      color: #ff4081;"  class="btn-block" (click)="singleClick()" (dblclick)="doubleClick()">Log in</button>
+      color: #ff4081;" class="btn-block" (click)="singleClick()" (dblclick)="doubleClick()">Log in</button>
     </form>
   </mat-card>
-
 </div>
 <ng-template #elseBlock>
- <div fxLayout="row" fxLayoutAlign="center center" *ngIf="!LoginFailed; else FailedBlock">
-  <mat-card class="box" style="background-color:#228B22;">
-    <mat-card-header fxLayout="row" fxLayoutAlign="center center">
-      <mat-card-title style="color:white">Login Successful!!!</mat-card-title>
-    </mat-card-header>
-    <div > <p style="    color: white;
-      font-size: xxx-large;">
-      Welcome Onboard
-    </p>
-  <p style="color: white;
-  font-size: large;">
-    What do you wanna gobble up today ?
-  </p></div>
-
-    
-  </mat-card>
- </div>
-<ng-template #FailedBlock>
-  <div fxLayout="row" fxLayoutAlign="center center">
-    <mat-card class="box" style="background-color:#D40707;">
+  <div fxLayout="row" fxLayoutAlign="center center" *ngIf="!LoginFailed; else FailedBlock">
+    <mat-card class="" style="background-color:#228B22;">
       <mat-card-header fxLayout="row" fxLayoutAlign="center center">
-        <mat-card-title style="color:white">Login Unsuccessful!!!</mat-card-title>
+        <mat-card-title style="color:white">Login Successful!!!</mat-card-title>
       </mat-card-header>
-      <div > 
-    <p style="color: white;
+      <div>
+        <p style="    color: white;
+      font-size: xxx-large;">
+          Welcome Onboard
+        </p>
+        <p style="color: white;
+  font-size: large;">
+          What do you wanna gobble up today ?
+        </p>
+      </div>
+
+
+    </mat-card>
+  </div>
+  <ng-template #FailedBlock>
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <mat-card class="" style="background-color:#D40707;">
+        <mat-card-header fxLayout="row" fxLayoutAlign="center center">
+          <mat-card-title style="color:white">Login Unsuccessful!!!</mat-card-title>
+        </mat-card-header>
+        <div>
+          <p style="color: white;
     font-size: large;">
-      Please try again!
-    </p> 
-    <button style="    border: 1px solid #ff4081;
+            Please try again!
+          </p>
+          <button style="    border: 1px solid #ff4081;
     line-height: 54px;
     background: #FFF7FA;
     width: 70%;
-    color: #ff4081;"   (click)="LoginAgain()">Log in</button>
-    
-  
-  </div>
-  
-      
-    </mat-card>
-   </div>
-</ng-template>
+    color: #ff4081;" (click)="LoginAgain()">Log in</button>
+
+
+        </div>
+
+
+      </mat-card>
+    </div>
+  </ng-template>
 </ng-template>
